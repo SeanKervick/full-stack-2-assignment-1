@@ -42,7 +42,7 @@ export const getPopularMovies = () => {
     `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
   ).then((response) => {
     if (!response.ok)
-      throw new Error(`Unable to fetch now popular movies. Response status: ${response.status}`);
+      throw new Error(`Unable to fetch most popular movies. Response status: ${response.status}`);
     return response.json();
   })
     .catch((error) => {
@@ -50,6 +50,18 @@ export const getPopularMovies = () => {
     });
 };
 
+export const getTopRatedMovies = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
+  ).then((response) => {
+    if (!response.ok)
+      throw new Error(`Unable to fetch top rated movies. Response status: ${response.status}`);
+    return response.json();
+  })
+    .catch((error) => {
+      throw error
+    });
+};
 
   
   export const getMovie = (id: string) => {
