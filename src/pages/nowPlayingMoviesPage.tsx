@@ -53,7 +53,7 @@ const NowPlayingMoviesPage: React.FC = () => {
   return (
     <>
       <PageTemplate
-        title="Now Playing Movies"
+        title="Movies in Cinemas Now"
         movies={displayedMovies}
         action={(movie: BaseMovieProps) => {
           return <AddToPlaylistIcon {...movie} />
