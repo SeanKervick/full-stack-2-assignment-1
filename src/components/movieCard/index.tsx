@@ -40,8 +40,6 @@ const MovieCard: React.FC<MovieCardProps> = ({movie, action}) => {
 
   if (favourites.find((id) => id === movie.id)) 
     movie.favourite = true;
- 
- 
 
   return (
     <Card sx={styles.card}>

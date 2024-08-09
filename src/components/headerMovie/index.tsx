@@ -8,6 +8,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import { MovieDetailsProps } from "../../types/interfaces";
 import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from '@mui/icons-material/Favorite'; 
+import PlaylistIcon from '@mui/icons-material/Favorite'; 
+
 
 
 const styles = {
@@ -26,9 +28,15 @@ const styles = {
 const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
 
   // retrieve favorite movies from local storage
-  const faveouriteMovies = JSON.parse(localStorage.getItem("favourites") || '[]'); // from favouriteMoviesPage
-  const isFavouriteMovie = faveouriteMovies.find((faveouriteMovies: { id: number; }) => faveouriteMovies.id === movie.id); // check if the movie's id is in the list of favourite movies
+  const favouriteMovies = JSON.parse(localStorage.getItem("favourites") || '[]'); // from favouriteMoviesPage
+  const isFavouriteMovie = favouriteMovies.find((favouriteMovies: { id: number; }) => favouriteMovies.id === movie.id); // check if the movie's id is in the list of favourite movies
   
+  // retrieve playlist movies from local storage
+  const playlistMovies = JSON.parse(localStorage.getItem("playlists") || '[]'); // from playlistMoviesPage
+  const isPlaylistMovie = playlistMovies.find((playlistMovies: { id: number; }) => playlistMovies.id === movie.id); // check if the movie's id is in the list of favourite movies
+ 
+
+
   return (
     <Paper component="div" sx={styles.root}>
       <IconButton aria-label="go back">
@@ -39,6 +47,14 @@ const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
          isFavouriteMovie ? ( // from index.tsx
             <Avatar sx={styles.avatar}>
               <FavoriteIcon />
+            </Avatar>
+          ) : null
+        }
+              {
+        // check if the movie is a playlist, display the icon if true
+         isPlaylistMovie ? ( // from index.tsx
+            <Avatar sx={styles.avatar}>
+              <PlaylistIcon />
             </Avatar>
           ) : null
         }

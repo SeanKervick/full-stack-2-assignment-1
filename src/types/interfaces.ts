@@ -23,16 +23,16 @@ export interface BaseMovieProps {
     action: (m: BaseMovieProps) => React.ReactNode;
   }
 
-  export interface MovieDetailsProps extends BaseMovieProps {
-    genres: {
-      id: number;
-      name: string;
-    }[];
-    production_countries: {
-      iso_3166_1: string;
-      name: string;
-    }[];
-  }
+  // export interface MovieDetailsProps extends BaseMovieProps {
+  //   genres: {
+  //     id: number;
+  //     name: string;
+  //   }[];
+  //   production_countries: {
+  //     iso_3166_1: string;
+  //     name: string;
+  //   }[];
+  // }
 
   export interface MovieImage {
     file_path: string;
@@ -44,10 +44,10 @@ export interface BaseMovieProps {
     width?: number;
   }
   
-  export interface MoviePageProps {
-    movie: MovieDetailsProps;
-    images: MovieImage[];
-  }
+  // export interface MoviePageProps {
+  //   movie: MovieDetailsProps;
+  //   images: MovieImage[];
+  // }
 
   export type FilterOption = "title" | "genre";
 
