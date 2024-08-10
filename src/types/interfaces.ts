@@ -23,16 +23,36 @@ export interface BaseMovieProps {
     action: (m: BaseMovieProps) => React.ReactNode;
   }
 
-  // export interface MovieDetailsProps extends BaseMovieProps {
-  //   genres: {
-  //     id: number;
-  //     name: string;
-  //   }[];
-  //   production_countries: {
-  //     iso_3166_1: string;
-  //     name: string;
-  //   }[];
-  // }
+  export interface BaseActorProps {
+    id: number;
+    name: string;
+    biography: string;
+    profile_path?: string;
+    birthday?: string;
+    deathday?: string;
+    known_for_department: string;
+    popularity: number;
+    place_of_birth?: string;
+    also_known_as?: string[];
+    favourite?: boolean;
+  }
+
+  export interface BaseActorListProps {
+    actors: BaseActorProps[];
+    action: (m: BaseActorProps) => React.ReactNode;
+  }
+
+
+  export interface MovieDetailsProps extends BaseMovieProps {
+    genres: {
+      id: number;
+      name: string;
+    }[];
+    production_countries: {
+      iso_3166_1: string;
+      name: string;
+    }[];
+  }
 
   export interface MovieImage {
     file_path: string;
@@ -44,10 +64,10 @@ export interface BaseMovieProps {
     width?: number;
   }
   
-  // export interface MoviePageProps {
-  //   movie: MovieDetailsProps;
-  //   images: MovieImage[];
-  // }
+  export interface MoviePageProps {
+    movie: MovieDetailsProps;
+    images: MovieImage[];
+  }
 
   export type FilterOption = "title" | "genre";
 
@@ -57,6 +77,10 @@ export interface BaseMovieProps {
   }
 
   export interface MovieListPageTemplateProps extends BaseMovieListProps {
+    title: string;
+  }
+
+  export interface ActorListPageTemplateProps extends BaseActorListProps {
     title: string;
   }
 
@@ -78,4 +102,11 @@ export interface BaseMovieProps {
     total_pages: number;
     total_results: number;
     results: BaseMovieProps[];
+  }
+
+  export interface DiscoverActors {
+    page: number;	
+    total_pages: number;
+    total_results: number;
+    results: BaseActorProps[];
   }
