@@ -38,12 +38,12 @@ const TemplateActorPage: React.FC<TemplateActorPageProps> = ({actor, children}) 
     }
 
     if (isError) {
-        return <h1>{(error
-
-        ).message}</h1>;
+        return <h1>{error.message}</h1>; 
     }
 
-    const images = data as ActorImage[];
+    // const images = data as ActorImage[];
+    const images = data || []; 
+
 
     return (
         <>
