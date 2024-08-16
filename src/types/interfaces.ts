@@ -54,7 +54,24 @@ export interface BaseMovieProps {
     }[];
   }
 
+  // export interface ActorDetailsProps extends BaseActorProps {
+  //   id: number;
+  //   name: string;
+  //   biography: string;
+  //   birthday: string;
+  // }
+
   export interface MovieImage {
+    file_path: string;
+    aspect_ratio?: number; //some props are optional...
+    height?: number;
+    iso_639_1?: string;
+    vote_average?: number;
+    vote_count?: number;
+    width?: number;
+  }
+
+  export interface ActorImage {
     file_path: string;
     aspect_ratio?: number; //some props are optional...
     height?: number;
@@ -69,6 +86,11 @@ export interface BaseMovieProps {
     images: MovieImage[];
   }
 
+  export interface ActorPageProps {
+    actor: BaseActorProps;
+    images: ActorImage[];
+  }
+
   export type FilterOption = "title" | "genre";
 
   export interface BaseMovieListProps {
@@ -81,7 +103,7 @@ export interface BaseMovieProps {
   }
 
   export interface ActorListPageTemplateProps extends BaseActorListProps {
-    title: string;
+    name: string;
   }
 
   export interface Review{

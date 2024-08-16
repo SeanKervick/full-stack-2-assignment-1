@@ -84,15 +84,6 @@ const MovieDetails: React.FC<MovieDetailsProps> = (movie) => {
                 </li>
             </Paper>
             <Paper component="ul" sx={styles.chipSet}>
-                <li>
-                    <Chip label="Revenue:" sx={styles.chipLabel} color="primary" />
-                    <Chip
-                    icon={<MonetizationIcon />}
-                    label={`${movie.revenue.toLocaleString()}`}
-                />
-                </li>
-            </Paper>
-            <Paper component="ul" sx={styles.chipSet}>
                 <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
                 <Chip
                     icon={<StarRate />}

@@ -12,7 +12,7 @@ import StarRateIcon from "@mui/icons-material/StarRate";
 import Grid from "@mui/material/Grid";
 // import img from '../../images/film-poster-placeholder.png';
 import { BaseActorProps } from "../../types/interfaces"; 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import { ActorsContext } from "../../contexts/actorsContext";
 
@@ -82,11 +82,11 @@ const ActorCard: React.FC<ActorCardProps> = ({actor, action}) => {
       </CardContent>
       <CardActions disableSpacing>
       {action(actor)}
-        {/* <Link to={`/movies/${movie.id}`}> */}
+        <Link to={`/actors/${actor.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
-        {/* </Link> */}
+        </Link>
       </CardActions>
     </Card>
   );
