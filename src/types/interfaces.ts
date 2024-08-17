@@ -102,6 +102,7 @@ export interface BaseMovieProps {
 
   export interface ActorListPageTemplateProps extends BaseActorListProps {
     name: string;
+    birthday?: string;
   }
 
   export interface Review{

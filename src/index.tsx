@@ -37,20 +37,20 @@ const App = () => {
         <SiteHeader />
           <MoviesContextProvider>
             <ActorsContextProvider>
-              <Routes>
-                <Route path="/reviews/:id" element={<MovieReviewPage/>} />
-                <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
-                <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
-                <Route path="/movies/now" element={<NowPlayingMoviesPage />} />
-                <Route path="/movies/popular" element={<PopularMoviesPage />} />
-                <Route path="/movies/top" element={<TopRatedMoviesPage />} />
-                <Route path="/actors" element={<ActorsPage />} />
-                <Route path="/movies/:id" element={<MoviePage />} />
-                <Route path="/actors/:id" element={<ActorPage />} />
-                <Route path="/actors/favourites" element={<FavouriteActorsPage />} />
-                <Route path="/" element={<HomePage />} />
-                <Route path="*" element={<Navigate to="/" />} />
-              </Routes>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
+              <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
+              <Route path="/movies/now" element={<NowPlayingMoviesPage />} />
+              <Route path="/movies/popular" element={<PopularMoviesPage />} />
+              <Route path="/movies/top" element={<TopRatedMoviesPage />} />
+              <Route path="/actors" element={<ActorsPage />} />
+              <Route path="/reviews/:id" element={<MovieReviewPage/>} />
+              <Route path="/movies/:id" element={<MoviePage />} />
+              <Route path="/actors/:id" element={<ActorPage />} />
+              <Route path="/actors/favourites" element={<FavouriteActorsPage />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
             </ActorsContextProvider>
         </MoviesContextProvider>
       </BrowserRouter>
