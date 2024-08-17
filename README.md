@@ -11,48 +11,58 @@ This repository contains an implementation of the Movie Fans Web Application usi
 ### Features
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any **modifications to existing features**) .]
 
-+ Feature 1
-+ Feature 2
-+ Feature 3
-+ etc
-+ etc
+List view for the following pages:
++ 'In Cinemas Now' Page
++ 'most popular' movies page
++ 'top rated' movies page
++ Actors page
++ Favourite Actors page
+
+Detail View for the following:
++ Actors - biography
+
+Data Hyperlinking:
+
 
 ### Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+Standard setup requirements: run 'npm intall' & add your API key to your .env file as: VITE_TMDB_KEY=
 
 ### API endpoints
 
 [ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
 
 e.g.
-+ Discover list of movies - discover/movie
-+ Movie details - movie/:id
-+ Movie genres = /genre/movie/list
++ Upcoming movies - https://api.themoviedb.org/3/movie/upcoming?
++ Now Playing - https://api.themoviedb.org/3/movie/now_playing?
++ Popular - https://api.themoviedb.org/3/movie/popular?
++ Actor images - https://api.themoviedb.org/3/person/${id}/images
++ Top Rated - https://api.themoviedb.org/3/movie/top_rated?
++ Actors - https://api.themoviedb.org/3/person/popular?
++ Actor details - (https://api.themoviedb.org/3/person/${id}?)
+
 
 ### Routing
 
 [ List the __new routes__ supported by your app and state the associated page.]
 
-+ /blogs - displays all published blogs.
-+ /blogs/:id - displays a particular blog.
-+ /blogs/:id/comments - detail view of a particular blog and its comments.
-+ etc.
++ "/movies/upcoming - displays upcoming movies.
++ "/movies/now - displays movies in cinemas now.
++ "/movies/popular - displays most popular movies.
++ "/movies/top" - displays top rated movies.
++ "/actors" - displays list of most popular actors.
++ "/actors/:id" - displays information on a specifc actor such as biography.
++ "/actors/favourites" - displays actors that have been chosen as favourites.
 
-[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
 
 ### Third Party Components/Integration
 
 [Describe the level of  integration/use or other API's or third party components]
 
 + React Components
-+ Third party/custom APIs
-+ Authentication
-+ etc...
++ TMDB API
 
 ### Independent learning (If relevant)
 
-Itemize the technologies/techniques you researched independently and adopted in your project, 
-i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
-(we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
+All developments were learned from the labs.
 
