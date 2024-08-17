@@ -12,10 +12,9 @@ const initialContextState: ActorContextInterface = {
     favourites: [],
     addToFavourites: () => {},
     removeFromFavourites: () => {},
-    // addToPlaylist: (actor) => { actor.id }
 };
 
-export const ActorsContext = React.createContext<ActorContextInterface>(initialContextState);;
+export const ActorsContext = React.createContext<ActorContextInterface>(initialContextState);
 
 const ActorsContextProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     const [favourites, setFavourites] = useState<number[]>([]);
@@ -33,17 +32,6 @@ const removeFromFavourites = useCallback((actor: BaseActorProps) => {
     setFavourites((prevFavourites) => prevFavourites.filter((mId) => mId !== actor.id));
 }, []);
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    // const [playlist, setPlaylist] = useState<number[]>([]);  // NEW
-
-    // const addToPlaylist = useCallback((actor: BaseActorProps) => {  // NEW
-    //     setPlaylist((prevPlaylist) => {
-    //         if (!prevPlaylist.includes(actor.id)) {
-    //             return [...prevPlaylist, actor.id];
-    //         }
-    //         return prevPlaylist;
-    //     });
-    // }, []);
 
     return (
         <ActorsContext.Provider
@@ -51,7 +39,6 @@ const removeFromFavourites = useCallback((actor: BaseActorProps) => {
                 favourites,
                 addToFavourites,
                 removeFromFavourites,
-                // addToPlaylist,
             }}
         >
             {children}

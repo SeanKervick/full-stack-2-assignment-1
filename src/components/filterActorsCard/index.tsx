@@ -30,13 +30,13 @@ const styles = {
 };
 
 
-interface FilterActorsCardProps {
+interface FilterMoviesCardProps {
   onUserInput: (f: FilterOption, s: string)  => void; // Add this line
   titleFilter: string;
   genreFilter: string;
 }
 
-const FilterActorsCard: React.FC<FilterActorsCardProps> = ({ titleFilter, genreFilter, onUserInput }) => {
+const FilterMoviesCard: React.FC<FilterMoviesCardProps> = ({ titleFilter, genreFilter, onUserInput }) => {
   const { data, error, isLoading, isError } = useQuery<GenreData, Error>("genres", getGenres);
 
   if (isLoading) {
@@ -69,7 +69,7 @@ const FilterActorsCard: React.FC<FilterActorsCardProps> = ({ titleFilter, genreF
       <CardContent>
         <Typography variant="h5" component="h1">
           <FilterAltIcon fontSize="large" />
-          Filter the actors.
+          Filter the movies.
         </Typography>
         <TextField
           sx={styles.formControl}
@@ -80,13 +80,30 @@ const FilterActorsCard: React.FC<FilterActorsCardProps> = ({ titleFilter, genreF
           variant="filled"
           onChange={handleTextChange}
         />
+        <FormControl sx={styles.formControl}>
+          <InputLabel id="genre-label">Genre</InputLabel>
+          <Select
+            labelId="genre-label"
+            id="genre-select"
+            value={genreFilter}
+            onChange={handleGenreChange}
+          >
+            {genres.map((genre) => {
+              return (
+                <MenuItem key={genre.id} value={genre.id}>
+                  {genre.name}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
       </CardContent>
     </Card>
     <Card sx={styles.root} variant="outlined">
         <CardContent>
           <Typography variant="h5" component="h1">
             <SortIcon fontSize="large" />
-            Sort the actors.
+            Sort the movies.
           </Typography>
         </CardContent>
       </Card>
@@ -94,4 +111,4 @@ const FilterActorsCard: React.FC<FilterActorsCardProps> = ({ titleFilter, genreF
   );
 }
 
-export default FilterActorsCard;
+export default FilterMoviesCard;

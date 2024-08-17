@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../headerActorList";
 import Grid from "@mui/material/Grid";
 import ActorList from "../actorList";
-import {  ActorListPageTemplateProps} from "../../types/interfaces";
+import { ActorListPageTemplateProps} from "../../types/interfaces";
 
 const styles = {
   root: { 
@@ -10,11 +10,11 @@ const styles = {
   }
 };
 
-const ActorListPageTemplate: React.FC<ActorListPageTemplateProps> = ({ actors, title, action })=> {
+const ActorListPageTemplate: React.FC<ActorListPageTemplateProps> = ({ actors, name, action })=> {
   return (
     <Grid container sx={styles.root}>
       <Grid item xs={12}>
-        <Header title={title} />
+        <Header title={name} />
       </Grid>
       <Grid item container spacing={5}>
       <ActorList action={action} actors={actors}></ActorList>

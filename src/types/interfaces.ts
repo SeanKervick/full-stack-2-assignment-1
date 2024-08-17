@@ -54,13 +54,6 @@ export interface BaseMovieProps {
     }[];
   }
 
-  // export interface ActorDetailsProps extends BaseActorProps {
-  //   id: number;
-  //   name: string;
-  //   biography: string;
-  //   birthday: string;
-  // }
-
   export interface MovieImage {
     file_path: string;
     aspect_ratio?: number; //some props are optional...
@@ -96,6 +89,11 @@ export interface BaseMovieProps {
   export interface BaseMovieListProps {
     movies: BaseMovieProps[];
     selectFavourite: (movieId: number) => void;  //add this
+  }
+
+  export interface BaseActorListProps {
+    actors: BaseActorProps[];
+    selectFavourite: (actorId: number) => void; 
   }
 
   export interface MovieListPageTemplateProps extends BaseMovieListProps {

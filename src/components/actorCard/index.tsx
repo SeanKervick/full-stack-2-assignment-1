@@ -8,9 +8,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
-import StarRateIcon from "@mui/icons-material/StarRate";
 import Grid from "@mui/material/Grid";
-// import img from '../../images/film-poster-placeholder.png';
+import img from '../../images/film-poster-placeholder.png';
 import { BaseActorProps } from "../../types/interfaces"; 
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
@@ -70,12 +69,7 @@ const ActorCard: React.FC<ActorCardProps> = ({actor, action}) => {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {/* {movie.release_date} */}
-            </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <Typography variant="h6" component="p">
-              <StarRateIcon fontSize="small" />
+              {actor.birthday}
             </Typography>
           </Grid>
         </Grid>

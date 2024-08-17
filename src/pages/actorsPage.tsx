@@ -8,7 +8,9 @@ import ActorFilterUI, {
 import { BaseActorProps, DiscoverActors } from "../types/interfaces";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
-import AddToPlaylistIcon from "../components/cardIcons/addToPlaylist";
+import AddToFavouritesActorsIcon from '../components/cardIcons/addToActorFavourites'
+
+
 
 const nameFiltering = {
   name: "name",
@@ -17,8 +19,8 @@ const nameFiltering = {
 };
 
 
-const ActorsPage: React.FC = () => {
-  const { data, error, isLoading, isError } = useQuery<DiscoverActors, Error>("actors", getActors);
+const HomePage: React.FC = () => {
+  const { data, error, isLoading, isError } = useQuery<DiscoverActors, Error>("discover", getActors);
   const { filterValues, setFilterValues, filterFunction } = useFiltering(
     [nameFiltering]
   );
@@ -35,7 +37,7 @@ const ActorsPage: React.FC = () => {
   const changeFilterValues = (type: string, value: string) => {
     const changedFilter = { name: type, value: value };
     const updatedFilterSet =
-      type === "name"
+      type === "title"
         ? [changedFilter, filterValues[1]]
         : [filterValues[0], changedFilter];
     setFilterValues(updatedFilterSet);
@@ -48,11 +50,11 @@ const ActorsPage: React.FC = () => {
   return (
     <>
       <PageTemplate
-        title="Actors"
+        name="Discover Actors"
         actors={displayedActors}
         action={(actor: BaseActorProps) => {
-            return <AddToPlaylistIcon {...actor} />
-          }}
+          return <AddToFavouritesActorsIcon {...actor} />
+        }}
       />
       <ActorFilterUI
         onFilterValuesChange={changeFilterValues}
@@ -61,4 +63,4 @@ const ActorsPage: React.FC = () => {
     </>
   );
 };
-export default ActorsPage;
+export default HomePage;
