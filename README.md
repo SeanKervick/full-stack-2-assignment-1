@@ -4,7 +4,7 @@
 
 __Name:__ Seán Kervick
 
-__Video Demo:__ TBC
+__Video Demo:__ https://youtu.be/Taik8oICvnA
 
 This repository contains an implementation of the Movie Fans Web Application using the React library. 
 
@@ -21,12 +21,11 @@ List view for the following pages:
 Detail View for the following:
 + Actors - biography
 
-Data Hyperlinking:
 
 
 ### Setup requirements.
 
-Standard setup requirements: run 'npm intall' & add your API key to your .env file as: VITE_TMDB_KEY=
+Standard setup requirements: run 'npm install' & add your API key to your .env file as: VITE_TMDB_KEY=
 
 ### API endpoints
 
@@ -57,7 +56,7 @@ e.g.
 
 ### Third Party Components/Integration
 
-[Describe the level of  integration/use or other API's or third party components]
+[Describe the level of integration/use or other API's or third party components]
 
 + React Components
 + TMDB API
